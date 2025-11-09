@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Real‑Time Vehicle Counter (PoC)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Real‑Time Vehicle Counter</h1>
+    <p class="subtitle">YOLOv8m + SORT / ByteTrack • Two‑way line crossing • Live counts</p>
+  </header>
+
+  <main class="container">
+    <section class="video-card">
+      <div class="video-header">
+        <h2>Processed Stream</h2>
+        <div class="status-bar" id="statusBar">
+          <span class="dot" id="statusDot"></span>
+          <span id="statusText">Connecting…</span>
+        </div>
+      </div>
+      <div class="video-wrap">
+        <div class="overlay" id="loadingOverlay">
+          <div class="spinner"></div>
+          <div>Connecting to video stream…</div>
+        </div>
+        <img id="video" alt="Live processed video stream" />
+      </div>
+      <div class="controls">
+        <button id="btnReset" class="btn primary">Reset Counts</button>
+        <button id="btnPause" class="btn">Pause</button>
+        <button id="btnDownload" class="btn">Download CSV</button>
+      </div>
+    </section>
+
+    <section class="counts-card">
+      <h2>Live Metrics</h2>
+      <div class="grid">
+        <div class="metric up">
+          <span class="label">Up</span>
+          <span id="count-up" class="value">0</span>
+          <span id="rate-up" class="hint">0.0 / min</span>
+        </div>
+        <div class="metric down">
+          <span class="label">Down</span>
+          <span id="count-down" class="value">0</span>
+          <span id="rate-down" class="hint">0.0 / min</span>
+        </div>
+        <div class="metric total">
+          <span class="label">Total</span>
+          <span id="count-total" class="value">0</span>
+          <span class="hint">Since last reset</span>
+        </div>
+        <div class="metric fps">
+          <span class="label">Server FPS</span>
+          <span id="fps" class="value">0</span>
+          <span id="frames" class="hint">0 frames</span>
+        </div>
+      </div>
+      <div class="meta">
+        <span id="last-updated">Last updated: —</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>
+      Decoupled front end • Set backend via <code>?backend=&lt;URL&gt;</code>.
+      Current: <span id="backendUrl"></span>
+    </small>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
