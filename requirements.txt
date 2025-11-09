@@ -1,0 +1,7 @@
+ultralytics
+filterpy
+scikit-image
+flask
+flask-cors
+opencv-python-headless
+numpy
