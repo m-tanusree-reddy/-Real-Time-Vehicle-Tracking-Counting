@@ -1,4 +1,4 @@
-# Real-Time-Vehicle-Counter
+# Real-Time-Vehicle-Counter_week2
 
 This project is a full-stack web application that performs real-time vehicle detection, tracking, and counting from a video stream. It uses the YOLOv8 object detection model and the SORT tracking algorithm, serving a live dashboard through a Flask backend and a vanilla JavaScript frontend.
 
@@ -197,3 +197,8 @@ The Flask server exposes the following endpoints:
     -   **Response**: `{"status": "ok", "message": "Counts and state reset."}`
 -   `GET /health`: A simple health check endpoint.
     -   **Response**: `{"ok": true, "service": "vehicle-counter", ...}`
+## 📧 Contact
+
+*M Tanusree Reddy*  
+📍 BE AIDS @ CMRIT  
+📧 [m.tanusreereddy@gmail.com]
